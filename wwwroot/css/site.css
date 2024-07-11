@@ -1,0 +1,52 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.table-header-bg {
+    background-color: black; /* Change this to your desired color */
+    color: white; /* Optional: Change the text color */
+}
+
+.form-group {
+    border: 1px solid #ced4da;
+    padding: 0px;
+    border-radius: 6px;
+    width: auto;
+}
+
+    .form-group:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    }
+
+    .form-group input {
+        display: inline-block;
+        width: auto;
+        border: none;
+    }
+
+        .form-group input:focus {
+            box-shadow: none;
+        }

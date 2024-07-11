@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<GymManagementSystem.Models.Entities.Package>
+
+<h1>Packages</h1>
+<table class="table">
+    <thead class="table-header-bg">
+        <tr>
+            
+            <th scope="col">Type</th>
+            <th scope="col">Duration (Days)</th>
+            <th scope="col">Fee (LKR)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var package in Model)
+        {
+            <tr>
+                
+                <th>@package.Type</th>>
+                <th>@package.Duration</th>
+                <th>@package.fee</th>
+                <th>
+                    <a class="btn btn-primary" asp-controller="Packages" asp-action="PackageEdit" asp-route-id="@package.Id">Edit</a>
+                </th>
+                <th>
+                    <form asp-controller="Packages" asp-action="PackageDelete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@package.Id" />
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this package?');">Delete</button>
+                    </form>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model GymManagementSystem.Models.Entities.Member
+
+<h1>Edit Member</h1>
+
+@if (Model is null)
+{
+    <p>No Member was found with this ID</p>
+}
+else {
+    <form method="post">
+
+        <div class="mt-3">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control" asp-for="Id" readonly />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">BirthDay</label>
+            <input type="date" class="form-control" asp-for="Birthday" />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Telephone Number</label>
+            
+            
+                <div class="form-group mt-2">
+                    <span class="border-end country-code px-2">+94</span>
+                    <input type="text" class="form-control" id="ec-mobile-number" aria-describedby="emailHelp" placeholder="123456789" asp-for="TelNO" />
+                </div>
+            
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Join Date</label>
+            <input type="date" class="form-control" asp-for="JoinDate" />
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+}

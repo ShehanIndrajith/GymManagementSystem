@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<GymManagementSystem.Models.Entities.Member>
+
+<h1>Members</h1>
+<table class="table">
+    <thead class="table-header-bg">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Tel No</th>
+            <th scope="col">Join Date</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model){
+            <tr>
+                <th>@member.Id</th>
+                <th>@member.Name</th>
+                <th>@member.Birthday</th>
+                <th>@member.TelNO</th>
+                <th>@member.JoinDate</th>
+                <th>
+                    <a class="btn btn-primary" asp-controller="Members" asp-action="Edit" asp-route-id="@member.Id">Edit</a>
+                </th>
+                <th>
+                    <a class="btn btn-primary">View More</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
